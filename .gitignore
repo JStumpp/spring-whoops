@@ -8,3 +8,4 @@
 /secring.gpg
 .*.swp
 src/test/resources/ssl
+.idea/
