@@ -9,7 +9,6 @@ Pretty error page for Spring Boot that helps you debug your web application in t
 ![image](img/screenshot.png)
 
 ## Dependency
-WARNING: NOT YET ON MAVEN CENTRAL, PLEASE STAY TUNED, WILL BE RELEASED SOON.
 ### Maven
 ```xml
 <dependency>
