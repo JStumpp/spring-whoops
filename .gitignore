@@ -1,0 +1,10 @@
+.gradle
+/build
+/bin/
+/.project
+/.settings
+/.classpath
+/gradle
+/secring.gpg
+.*.swp
+src/test/resources/ssl
