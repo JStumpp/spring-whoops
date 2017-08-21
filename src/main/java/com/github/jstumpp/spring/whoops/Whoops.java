@@ -255,7 +255,7 @@ public class Whoops {
     private final Logger log = LoggerFactory.getLogger(getClass());
 
 
-    public String prettyPage(ErrorAttributes errorAttributes, HttpServletRequest req, HttpServletResponse rsp) throws IOException, PebbleException {
+    public String prettyPage(ErrorAttributes errorAttributes, HttpServletRequest req, HttpServletResponse rsp) {
         ClassLoader loader = ClassLoader.getSystemClassLoader();
 
         SourceLocator locator = SourceLocator.local();
@@ -369,7 +369,11 @@ public class Whoops {
                 .build();
         Writer writer = new StringWriter();
 
-        template.get().evaluate(writer, context);
+        try {
+            template.get().evaluate(writer, context);
+        } catch (Exception e) {
+            log.error("Could not render error page", e);
+        }
 
         //log.error("execution of: {}{} resulted in exception\nRoute:\n{}\n\nStacktrace:",
         //  req.method(), req.path(), req.route().print(6), err);
